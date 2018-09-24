@@ -51,7 +51,6 @@ $(function() {
          });
     });
 
-
     /* TODO: Write a new test suite named "The menu" */
 describe('The menu', function() {
         /* TODO: Write a test that ensures the menu element is
@@ -59,12 +58,25 @@ describe('The menu', function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-
+         it('is the menu hidden by default?', function () {
+            var checkForClass = $('body').hasClass('menu-hidden');
+            expect(checkForClass).toBe(true); 
+         });
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+          it('does the menu toggle visibility?', function () {
+            var body  = $('body').hasClass('menu-hidden');
+            var menu = $('.menu-icon-link');
+            //this is the first click on the menu item:
+          menu.click();
+            expect(body).toBe(false); 
+            //this is the second click on the menu item:
+           // $('.menu-icon-link').click();
+             // expect(checkForClass).toBe(true); 
+         });
 });
     /* TODO: Write a new test suite named "Initial Entries" */
 describe('Initial Entries', function() {
